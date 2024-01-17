@@ -99,7 +99,7 @@ export default class DockHost extends Vue implements DockHostData {
       if (defSlot.length > 0) {
         //扫描所有插槽
         defSlot.forEach((v) => {
-          let key = v.key + '';
+          const key = String(v.key) + '';   // by leonstill 2024-01-17
           if (v.tag && v.tag.endsWith("DockPanel") && !StringUtils.isNullOrEmpty(key)) {
             let panelData = dockPanels.get(key);
             if (panelData)

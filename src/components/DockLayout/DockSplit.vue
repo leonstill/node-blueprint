@@ -51,7 +51,7 @@ export default class DockSplit extends Vue {
               style: {
                 left: this.direction === 'vertical' ? undefined : nowSize + '%',
                 top: this.direction === 'horizontal' ? undefined : nowSize + '%',
-                draggable: 'false',
+                // draggable: 'false',    // by leonstill 2024-01-17
               },
               on: {
                 //分割线拖动事件
