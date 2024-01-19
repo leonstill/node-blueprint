@@ -8,6 +8,7 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { ConnectorEditor } from "../../model/Editor/ConnectorEditor";
 import { Rect } from "../../model/Rect";
+import logger from "@/utils/Logger";
 
 /**
  * 编辑器背景绘制控制
@@ -94,7 +95,18 @@ export default class BlockEditorCanvasDrawer extends Vue {
       this.canvas.width = this.viewRealSize.w;
       this.canvas.height = this.viewRealSize.h;
     }
+    console.log('BlockEditorCanvasDrawer', `onViewRealSizeChanged: ${this.canvas.width} ${this.canvas.height}`);
   }
+
+  // @Watch('viewPort')
+  // onViewPortChanged() {
+  //   console.log('BlockEditorCanvasDrawer', `viewPort: ${this.viewPort.x} ${this.viewPort.y}`);
+  // }
+  // watch: {
+  //   viewPort: function onViewPortChange(val) {
+  //     console.log('viewPort', val);
+  //   } 
+  // }
 
   @Prop({default: true}) gridShow : boolean;
   @Prop({default: 20}) gridSize : number;

@@ -480,6 +480,7 @@ export default class BlockDrawer extends Vue {
     this.viewRealSize.w = this.editorHost.offsetWidth;
     this.viewRealSize.h = this.editorHost.offsetHeight;
     this.recalcViewPort();
+    console.log('BlockDrawer.viewRealSize:', this.viewRealSize.w, ',', this.viewRealSize.h);
   }
   public onEditorKey(keyCode : number) {
     let controlKeyDown = this.editorWorker.getIsControlKeyDown();
